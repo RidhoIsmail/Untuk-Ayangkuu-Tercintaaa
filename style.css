@@ -1,0 +1,228 @@
+:root {
+    --pink-light: #ffd6e0;
+    --pink-medium: #ff9bb3;
+    --pink-dark: #ff6b8b;
+    --pink-darker: #ff477e;
+}
+
+body {
+    background-color: var(--pink-light);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #5a3d3d;
+    overflow-x: hidden;
+    animation: backgroundShift 20s infinite alternate;
+}
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .popup-content {
+        width: 90%;
+        padding: 1.5rem;
+    }
+
+    .btn-apology {
+        font-size: 1rem;
+        padding: 8px 20px;
+    }
+
+    .message-box {
+        padding: 1.5rem;
+    }
+    
+    .floating svg {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .popup-content h3 {
+        font-size: 1.25rem;
+    }
+
+    .popup-content p {
+        font-size: 0.95rem;
+    }
+
+    .btn-apology {
+        font-size: 0.9rem;
+        padding: 6px 16px;
+    }
+
+    .message-box::before {
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 15px solid white;
+        top: -15px;
+    }
+}
+
+
+@keyframes backgroundShift {
+    0%   { background-color: var(--pink-light); }
+    25%  { background-color: #ffe4ec; }
+    50%  { background-color: #ffd1dc; }
+    75%  { background-color: #ffe4ec; }
+    100% { background-color: var(--pink-light); }
+}
+
+.heart {
+    color: var(--pink-darker);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1); }
+}
+
+.header {
+    background: linear-gradient(to right, var(--pink-medium), var(--pink-darker));
+    padding: 2rem 0;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 15px rgba(255, 71, 126, 0.2);
+}
+
+.btn-apology {
+    background-color: var(--pink-darker);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(255, 71, 126, 0.3);
+}
+
+.btn-apology:hover {
+    background-color: white;
+    color: var(--pink-darker);
+    transform: scale(1.05);
+}
+
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+.message-box {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    position: relative;
+    margin-top: -50px;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.message-box::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid white;
+}
+
+.footer {
+    background-color: var(--pink-dark);
+    color: white;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+/* Tambahan efek lucu */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-400px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+.balloon {
+    position: absolute;
+    bottom: 0;
+    animation: floatUp 6s ease-in forwards;
+    font-size: 2rem;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.heart-glow:hover {
+    color: #ff6b8b;
+    text-shadow: 0 0 5px #ff99aa, 0 0 15px #ff99aa, 0 0 25px #ff99aa;
+}
+
+.typing-romance {
+    border-right: 2px solid #ff6b8b;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 4s steps(40, end) forwards;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+.floating {
+    animation: floating 3s ease-in-out infinite;
+    cursor: pointer; /* Biar bisa diklik */
+}
+
+.popup-love {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 192, 203, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.popup-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    animation: popupGrow 0.3s ease-out forwards;
+    max-width: 90%;
+    width: 400px;
+    text-align: center;
+}
+
+@keyframes popupGrow {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
