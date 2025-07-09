@@ -1,6 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
     const btnForgive = document.getElementById('btnForgive');
     const responseDiv = document.getElementById('response');
+    document.getElementById("playMusicBtn").addEventListener("click", function () {
+     const music = document.getElementById("loveMusic");
+    if (music.paused) {
+        music.play();
+        this.textContent = "⏸️ Pause Musik";
+    }  else {
+        music.pause();
+        this.textContent = "🎵 Putar Musik Cinta";
+     }
+    });
+
 
     // Tombol minta maaf
     btnForgive.addEventListener('click', function () {

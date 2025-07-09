@@ -101,6 +101,10 @@ body {
     box-shadow: 0 4px 10px rgba(255, 71, 126, 0.3);
 }
 
+#playMusicBtn {
+    position: static;
+}
+
 .btn-apology:hover {
     background-color: white;
     color: var(--pink-darker);
