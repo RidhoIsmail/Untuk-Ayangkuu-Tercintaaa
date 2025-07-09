@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         this.textContent = "⏸️ Pause Musik";
     }  else {
         music.pause();
-        this.textContent = "🎵 Putar Musik Cinta";
+        this.textContent = "🎵 Putar Musik";
      }
     });
 
