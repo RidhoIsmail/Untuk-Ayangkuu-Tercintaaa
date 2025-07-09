@@ -7,7 +7,7 @@
 
 body {
     background-color: var(--pink-light);
-    font-family: "Segoe UI", "Arial Rounded MT Bold", "Tahoma", "Verdana", sans-serif;
+    font-family: 'Comic Neue', cursive, sans-serif;
     color: #5a3d3d;
     overflow-x: hidden;
 }
